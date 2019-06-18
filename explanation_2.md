@@ -1,4 +1,3 @@
-## rotated_array_search
+## Search in a Rotated Sorted Array
 
-This problem is solved using binary search, starting from 0 to number / 2 (since its the max number that can be the square of the target)
-depending if the current number multiplied by itself its higher or lower than the target, min and max are changed. this algorithm is solved on O(logn)
+The idea here is to find the rotation first to know where should the search go to, in order to accomplish this we compare the current pivot (mid)  with the lowest and the highest elements, if lowest is higher than the pivot then there is a rotation. time complexity is O(logn)
