@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[13]:
+# In[18]:
 
 
 # Returns index of key in arr[l..h] if key is present, 
@@ -16,19 +16,19 @@ def rotated_array_search (arr, number):
             return mid 
   
         # If arr[l...mid] is sorted  
-        if arr[l] <= arr[mid]: 
+        if arr[low] <= arr[mid]: 
   
             # As this subarray is sorted, we can quickly 
             # check if key lies in half or other half  
-            if key >= arr[l] and key <= arr[mid]: 
-                return search(arr, l, mid-1, key) 
-            return search(arr, mid+1, h, key) 
+            if key >= arr[low] and key <= arr[mid]: 
+                return search(arr, low, mid-1, key) 
+            return search(arr, mid+1, high, key) 
   
         # If arr[l..mid] is not sorted, then arr[mid... r] 
         # must be sorted 
-        if key >= arr[mid] and key <= arr[h]: 
-            return search(arr, mid+1, h, key) 
-        return search(arr, l, mid-1, key)
+        if key >= arr[mid] and key <= arr[high]: 
+            return search(arr, mid+1, high, key) 
+        return search(arr, low, mid-1, key)
     
     return search(arr, 0, len(arr)-1 , number)
 
