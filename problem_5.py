@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[21]:
-
-
 class TrieNode:
     def __init__(self):
         self.is_word = False
@@ -20,7 +17,7 @@ class TrieNode:
         def search_suffixes(word, currentNode):
             if(currentNode.is_word):
                 suffixes.append(word)
-            for k,v in currentNode.children.iteritems():
+            for k,v in currentNode.children.items():
                 search_suffixes(word + k, v)
         
         search_suffixes("", self)
@@ -47,7 +44,7 @@ class Trie():
             if char in current_node.children:
                 current_node = current_node.children[char]
             else:
-                return []
+                return None
         return current_node  
         pass
 
@@ -77,4 +74,3 @@ def f(prefix):
     else:
         print('')
 interact(f,prefix='');
-
